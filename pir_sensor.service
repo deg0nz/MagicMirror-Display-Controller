@@ -1,0 +1,10 @@
+[Unit]
+Description=MagicMirror PIR Service
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python /home/pi/pir.py > /home/pi/pir_sensor.log 2>&1
+
+[Install]
+WantedBy=multi-user.target

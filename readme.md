@@ -17,9 +17,10 @@ If you want it started as a `systemd` service, you have to copy the `.service` f
 Here's an example of the commands needed:
 
 ```
-# cp ./pir_sensor.service /lib/systemd/system
-# systemctl daemon-reload
-# systemctl start pir_sensor.service
+cp ./pir_sensor.service /lib/systemd/system
+sudo systemctl daemon-reload
+sudo systemctl enable pir_sensor.service
+sudo systemctl start pir_sensor.service
 ```
 
 You have to change line 7 to the location of the `pir.py` file like this:

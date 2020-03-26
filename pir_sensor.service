@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python /home/pi/pir.py > /home/pi/pir_sensor.log 2>&1
+ExecStart=/usr/bin/python -u /home/pi/MagicMirror-Display-Controller/pir.py
 
 [Install]
 WantedBy=multi-user.target

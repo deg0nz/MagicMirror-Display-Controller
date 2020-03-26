@@ -14,7 +14,7 @@ Clone the repository to wherever you want:
 
 If you want it started as a `systemd` service, you have to copy the `.service` file to `/lib/systemd/system` and reload the `systemd` daemons.
 
-Here's an example of the commands needed:
+Here's an example of the commands needed (cwd is the repository):
 
 ```
 # cp ./pir_sensor.service /lib/systemd/system
@@ -22,12 +22,16 @@ Here's an example of the commands needed:
 # systemctl start pir_sensor.service
 ```
 
-You have to change line 7 to the location of the `pir.py` file like this:
+If you cloned the repository somewhere else than your home directory, you have to change line 7 to the location of the `pir.py` file like this:
 
-`ExecStart=/usr/bin/python /path/to/your/pir.py`
+`ExecStart=/usr/bin/python -u /path/to/pir.py`
 
-Line 7 defaults to `/home/pi/pir.py`. So if you put the `pir.py` there, you doun't have to change anything.
+Line 7 defaults to `/home/pi/MagicMirror-Display-Controller/pir.py`. So if you cloned the repository to your home folder, you don't have to change anything.
 
+
+## Logs
+
+You can see the logs with `journalctl -u pir_sensor.service`
 
 ## Configuration
 
